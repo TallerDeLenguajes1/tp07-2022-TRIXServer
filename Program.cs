@@ -74,6 +74,53 @@ foreach (var tareaRealizada in tareasRealizadas)
     System.Console.WriteLine($"Duracion: \t{tareaRealizada.Duracion} minutos");
     System.Console.WriteLine("--");
     duracionTotal += tareaRealizada.Duracion;
-    
+
 }
 
+char flagBuscar;
+string buscar;
+
+System.Console.WriteLine($"--\tBuscar Tarea");
+System.Console.WriteLine("--");
+System.Console.Write("Buscar tarea (S - SI, N - NO): ");
+flagBuscar = char.ToUpper(Console.ReadKey().KeyChar);
+System.Console.WriteLine();
+
+while (flagBuscar == 'S')
+{
+    System.Console.Write("Ingrese la descripcion a buscar: ");
+    buscar = Console.ReadLine();
+    System.Console.WriteLine("--");
+
+    tarea tareaBuscar = null;
+
+    foreach (var item in tareasPendientes)
+    {
+        if ((item.Descripcion.ToLower()).Contains(buscar.ToLower()))
+        {
+            tareaBuscar = item;
+            break;
+
+        }
+    }
+
+    if (tareaBuscar == null)
+    {
+        foreach (var item in tareasRealizadas)
+        {
+            if ((item.Descripcion.ToLower()).Contains(buscar.ToLower()))
+            {
+                tareaBuscar = item;
+                break;
+
+            }
+        }
+    }
+
+    if (tareaBuscar != null)
+    {
+        System.Console.WriteLine($"Tarea que contiene: {tareaBuscar}");
+        System.Console.WriteLine($"Id Tarea: {tareaBuscar.IdTarea}");
+        System.Console.WriteLine($"Descripcion: {}");
+    }
+}
