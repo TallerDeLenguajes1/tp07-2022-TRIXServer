@@ -117,12 +117,29 @@ while (flagBuscar == 'S')
         }
     }
 
+    System.Console.WriteLine($"Tarea que contiene: {tareaBuscar}");
+
     if (tareaBuscar != null)
     {
-        System.Console.WriteLine($"Tarea que contiene: {tareaBuscar}");
         System.Console.WriteLine($"Id Tarea: \t{tareaBuscar.IdTarea}");
         System.Console.WriteLine($"Descripcion: \t{tareaBuscar.Descripcion}");
         System.Console.WriteLine($"Duracion: \t{tareaBuscar.Duracion} minutos");
         System.Console.WriteLine("--");
     }
+    else
+    {
+        System.Console.WriteLine("No hay tareas con ese termino");
+        System.Console.WriteLine("--");
+
+    }
+
+    System.Console.Write("Buscar tarea (S - SI, N - NO): ");
+    flagBuscar = char.ToUpper(Console.ReadKey().KeyChar);
+    System.Console.WriteLine();
+    
 }
+
+int horasTrabajadas = duracionTotal / 60;
+int minutosTrabajados = duracionTotal % 60;
+
+System.Console.WriteLine($"El empleado trabajo: {horasTrabajadas} horas y {minutosTrabajados} minutos");
