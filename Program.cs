@@ -120,7 +120,9 @@ while (flagBuscar == 'S')
     if (tareaBuscar != null)
     {
         System.Console.WriteLine($"Tarea que contiene: {tareaBuscar}");
-        System.Console.WriteLine($"Id Tarea: {tareaBuscar.IdTarea}");
-        System.Console.WriteLine($"Descripcion: {}");
+        System.Console.WriteLine($"Id Tarea: \t{tareaBuscar.IdTarea}");
+        System.Console.WriteLine($"Descripcion: \t{tareaBuscar.Descripcion}");
+        System.Console.WriteLine($"Duracion: \t{tareaBuscar.Duracion} minutos");
+        System.Console.WriteLine("--");
     }
 }
